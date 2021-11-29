@@ -1,0 +1,14 @@
+section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+

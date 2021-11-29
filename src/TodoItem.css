@@ -1,0 +1,42 @@
+li {
+    display: grid;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    padding: 0 20px;
+}
+
+li:hover {
+    background-color: #A9CCE3;
+    border-radius: 10px;
+}
+span {
+    justify-self: center;
+}
+
+span:first-child:hover {
+    padding: 3px;
+    cursor: pointer;
+    background-color: #48C9B0 ;
+    border-radius: 50%;
+}
+
+span:last-child:hover {
+    padding: 3px;
+    cursor: pointer;
+    background-color: #EC7063;
+    border-radius: 50%;
+}
+
+.Completed {
+    text-decoration: line-through;
+}
+
+.Icon-check--active {
+    padding: 3px;
+    cursor: pointer;
+    background-color: #48C9B0 ;
+    border-radius: 50%;
+}
