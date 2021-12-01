@@ -12,3 +12,7 @@ ul {
     grid-template-rows: auto;
 }
 
+
+.loadingMessage {
+    text-align: center;
+}

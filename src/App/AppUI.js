@@ -6,13 +6,17 @@ import { TodoList } from "../TodoList";
 import { TodoItem } from "../TodoItem";
 import { CreateTodoButton } from "../CreateTodoButton";
 import './App.css';
+import { Modal } from "../Modal";
+import { TodoForm } from "../TodoForm";
 
 function AppUI() {
   const { error,
           loading,
           searchedTodos,
           completeTodo,
-          deleteTodo} = React.useContext(TodoContext);
+          deleteTodo,
+          openModal,
+          setOpenModal,} = React.useContext(TodoContext);
   
     return (
         <React.Fragment>
@@ -22,9 +26,9 @@ function AppUI() {
       <TodoSearch />
       
       <TodoList>
-      {error && <p>Desesperate, hubo un error</p>}
-      {loading && <p>No desesperes, esta cargando...</p>}
-      {(!loading && !searchedTodos.length ) && <p>Crea tu primer todo</p>}
+      {error && <p className="loadingMessage" >Desesperate, hubo un error</p>}
+      {loading && <p className="loadingMessage" >No desesperes, esta cargando...</p>}
+      {(!loading && !searchedTodos.length ) && <p className="loadingMessage">Crea tu primer todo</p>}
 
       {searchedTodos.map((todo) => (
         <TodoItem 
@@ -36,9 +40,14 @@ function AppUI() {
         />
       ) )}
     </TodoList>
-  
 
-      <CreateTodoButton/>
+    <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal} />
+
+    {!!openModal && (
+      <Modal>
+      <TodoForm />
+    </Modal>
+    )} 
       
     </React.Fragment>
     )

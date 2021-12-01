@@ -1,4 +1,4 @@
-button {
+.CreateTodoButton {
     background-color: #5499C7;
     box-shadow: 0px 5px 25px white rgba(97, 218, 250, 1);
     padding: 15px 20px;
@@ -7,9 +7,12 @@ button {
     border: transparent;
     font-size: 24px;
     box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    bottom: 100px;
 }
 
-button:hover {
+.CreateTodoButton:hover {
     animation: peonza 0.3s ease;
     cursor: pointer;
 }
